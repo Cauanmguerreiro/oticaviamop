@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Para manter o footer na parte inferior */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    box-shadow: 0px 4px 2px -2px gray;
+}
+
+header img {
+    width: 150px;
+    height: auto; /* Mantém a proporção */
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #32635d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 4px 6px #132725; /* Sombra padrão */
+}
+
+button:hover {
+    background-color: #2d5a55;
+    transform: scale(1.02); 
+    box-shadow: 0 6px 10px #132725; /* Sombra mais intensa no hover */
+}
+
+main {
+    flex: 1; /* Faz o main expandir para ocupar o espaço disponível */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-inner article {
+    min-width: 100%; /* Mostra um produto por vez */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button:focus {
+    outline: none;
+}
+
+article {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+footer {
+    background-color: #32635d; /* Cor de fundo do rodapé */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%; /* Garante que o footer ocupe toda a largura */
+}
+
+.footer-content {
+    margin-bottom: 10px;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-social a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para mobile */
+@media (max-width: 600px) {
+    header {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 100%; /* Para ocupar toda a largura no mobile */
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    article {
+        padding: 15px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+    .footer-social {
+        margin-top: 10px;
+    }
+}
